@@ -1,5 +1,3 @@
-from typing import List, Tuple, Dict
-
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_distances
@@ -8,7 +6,7 @@ from torque_clustering.utils import _prune_by_torque_gap, final_partition_from_t
     _connected_components
 
 
-def torque_clustering(dist_mat: np.ndarray) -> Tuple[np.ndarray, Dict[Tuple[int, int], float]]:
+def torque_clustering(dist_mat: np.ndarray) -> tuple[np.ndarray, dict[tuple[int, int], float]]:
     n = dist_mat.shape[0]
     clusters = [[i] for i in range(n)]
     masses = np.ones(n, dtype=int)
@@ -38,7 +36,7 @@ def torque_clustering(dist_mat: np.ndarray) -> Tuple[np.ndarray, Dict[Tuple[int,
     return labels, torque
 
 
-def torque_cluster_text(corpus: List[str], vectorizer: TfidfVectorizer = None) -> np.ndarray:
+def torque_cluster_text(corpus: list[str], vectorizer: TfidfVectorizer = None) -> np.ndarray:
     if vectorizer is None:
         vectorizer = TfidfVectorizer(max_features=50_000,
                                      ngram_range=(1, 2),
