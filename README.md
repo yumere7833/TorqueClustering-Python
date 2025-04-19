@@ -1,9 +1,4 @@
 # TorqueClustering-Python
-
-## Autonomous clustering by fast find of mass and distance peaks
-
----
-
 ## Overview
 
 This repository provides the **Python implementation** of the Torque Clustering algorithm, originally implemented in MATLAB. Torque Clustering is an autonomous clustering algorithm that identifies clusters by finding mass and distance peaks. This Python version reproduces the functionality of the original algorithm while leveraging Python's ecosystem for ease of use and integration.
